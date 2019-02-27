@@ -7,10 +7,10 @@ http://jamiemorgenstern.com/papers/pid.pdf
 [Benjamin Wilson](https://github.com/benjaminrwilson), [Judy Hoffman](https://people.eecs.berkeley.edu/~jhoffman/), [Jamie Morgenstern](http://jamiemorgenstern.com)
 
 ## Prerequisites
+- Docker
 - NVIDIA GPU (we used an NVIDIA V100)
 - NVIDIA Drivers
 - NVIDIA Docker
-- Docker
 
 ## Getting Started
 ### Installation
@@ -61,7 +61,7 @@ mkdir ~/weights/
 ln -s datasets ~/github/maskrcnn-benchmark/
 ```
 
-- Edit the args in ```inequity/scripts/train_large.sh``` as needed. ```augmented_loss_weights``` is a list which corresponds to the weighting put on ```["LS", "DS", "Not a Person", "A person, cannot determine skin type"]```, so ```[1, 5, 1, 1]``` would put weight ```5``` on ```DS``` in the classification loss of the Faster R-CNN (as described in the paper).
+- Edit the args in ```inequity/scripts/train_large.sh``` as needed. ```augmented_loss_weights``` is a list which corresponds to the weighting put on ```["LS", "DS", "Not a Person", "A person, cannot determine skin type"]```. For example, ```[1, 5, 1, 1]``` would put weight ```5``` on individuals labeled as ```DS``` in the classification network loss of Faster R-CNN (as described in the appendix of the paper).
 
 - To run training:
 
