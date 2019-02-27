@@ -119,7 +119,9 @@ def run(seed):
     parser.add_argument(
         "--config-file",
         default=os.path.join(
-            home, "inequity-release/maskrcnn-benchmark/configs/bdd100k/e2e_faster_rcnn_R_50_FPN_1x_cocostyle.yaml"),
+            home,
+            "github/maskrcnn-benchmark/configs/bdd100k",
+            "e2e_faster_rcnn_R_50_FPN_1x_cocostyle.yaml"),
         metavar="FILE",
         help="path to config file",
         type=str,
