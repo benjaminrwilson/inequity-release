@@ -21,7 +21,7 @@ http://jamiemorgenstern.com/papers/pid.pdf
 - Clone the repository:
 
 ```
-git clone https://github.com/benjaminrwilson/inequity-release.git
+git clone https://github.com/benjaminrwilson/inequity-release.git ~/inequity-release/
 ```
 
 - Pull the docker image:
@@ -33,7 +33,7 @@ docker pull benjaminrwilson/inequity-release:latest
 - Run the docker image:
 
 ```
-bash docker/run.sh
+bash ~/inequity-release/docker/run.sh
 ```
 
 Once you're within the container, you will need to get the necessary data to run the experiments listed in the paper. You will need to get the annotations (provided by us in MS COCO format), the images from the BDD100K dataset, and lastly the weights we used.
@@ -41,14 +41,14 @@ Once you're within the container, you will need to get the necessary data to run
 - Download the annotations, images, and weights:
 
 ```
-bash scripts/get_data.sh
+bash ~/inequity-release/scripts/get_data.sh
 ```
 
 ### Evaluation
 
 - Run the evaluation (this will likely take over an hour).
 ```
-python eval.py
+python ~/inequity-release/inequity/eval.py
 ```
 
 The tables from the paper will be output as text based tables in a new folder called ```tables```. The graph will be created in a folder called ```figs```.
@@ -64,7 +64,7 @@ mkdir ~/weights/
 - Link the ```datasets``` directory as such:
 
 ```
-ln -s datasets ~/github/maskrcnn-benchmark/
+ln -s ~/inequity-release/datasets ~/github/maskrcnn-benchmark/datasets
 ```
 
 - Edit the args in ```inequity/scripts/train_large.sh``` as needed. ```augmented_loss_weights``` is a list which corresponds to the weighting put on ```["LS", "DS", "Not a Person", "A person, cannot determine skin type"]```. For example, ```[1, 5, 1, 1]``` would put weight ```5``` on individuals labeled as ```DS``` in the classification network loss of Faster R-CNN (as described in the appendix of the paper).
@@ -72,5 +72,5 @@ ln -s datasets ~/github/maskrcnn-benchmark/
 - To run training:
 
 ```
-bash inequity/scripts/train_large.sh
+bash ~/inequity-release/inequity/scripts/train_large.sh
 ```
