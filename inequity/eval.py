@@ -191,7 +191,8 @@ def run(home, gen_flags, split, subsets):
     """
 
     root = join(home, "inequity-release", "weights")
-    img_dir = join(home, "inequity-release", "datasets/bdd100k/images/100k/{}".format(split))
+    img_dir = join(home, "inequity-release",
+                   "datasets/bdd100k/images/100k/{}".format(split))
 
     ann_root = join(home, "inequity-release", "datasets/annotations")
     bdd_src = join(ann_root, "bdd100kstyle", "bdd100k.json")
@@ -222,7 +223,7 @@ def run(home, gen_flags, split, subsets):
                          [all_dst],
                          model_names,
                          EvalMode.COCO)
-        print_stats(res, model_names, "2_{}".format("mscoco"))
+        print_stats(home, res, model_names, "2_{}".format("mscoco"))
         model_names = ["e2e_faster_rcnn_R_50_FPN_1x_cocostyle.yaml"]
         weight_dirs = ["weighted1"]
         res = run_trials(home,
@@ -233,7 +234,8 @@ def run(home, gen_flags, split, subsets):
                          EvalMode.FINAL,
                          10,
                          weight_dirs=weight_dirs)
-        print_stats(res, model_names, "2_{}".format("bdd100k"), weight_dirs)
+        print_stats(home, res, model_names,
+                    "2_{}".format("bdd100k"), weight_dirs)
 
     # Generate Table 3
     # Dataset: BDD100K Val
@@ -250,7 +252,7 @@ def run(home, gen_flags, split, subsets):
                          json_paths,
                          model_names,
                          EvalMode.COCO)
-        print_stats(res, model_names, "3_{}".format("mscoco"))
+        print_stats(home, res, model_names, "3_{}".format("mscoco"))
 
         model_names = ["e2e_faster_rcnn_R_50_FPN_1x_cocostyle.yaml"]
         weight_dirs = ["weighted1"]
@@ -262,7 +264,8 @@ def run(home, gen_flags, split, subsets):
                          EvalMode.FINAL,
                          10,
                          weight_dirs=weight_dirs)
-        print_stats(res, model_names, "3_{}".format("bdd100k"), weight_dirs)
+        print_stats(home, res, model_names,
+                    "3_{}".format("bdd100k"), weight_dirs)
 
     # Generate Table 4
     # Dataset: BDD100K Val
@@ -278,7 +281,7 @@ def run(home, gen_flags, split, subsets):
                          json_paths,
                          MODELS,
                          EvalMode.COCO)
-        print_stats(res, MODELS, "4")
+        print_stats(home, res, MODELS, "4")
 
     # Generate Table 5
     # Dataset: BDD100K Val (No occluded)
@@ -294,7 +297,7 @@ def run(home, gen_flags, split, subsets):
                          json_paths,
                          MODELS,
                          EvalMode.COCO)
-        print_stats(res, MODELS, "5")
+        print_stats(home, res, MODELS, "5")
 
     # Generate Table 6
     # Dataset: BDD100K Val
@@ -318,7 +321,7 @@ def run(home, gen_flags, split, subsets):
                          EvalMode.FINAL,
                          10,
                          weight_dirs=weight_dirs)
-        print_stats(res, model_names, "6", weight_dirs)
+        print_stats(home, res, model_names, "6", weight_dirs)
 
     # Generate Table 7
     # Dataset: BDD100K Val
@@ -349,7 +352,8 @@ def run(home, gen_flags, split, subsets):
                          EvalMode.FINAL,
                          10,
                          weight_dirs=weight_dirs)
-        print_stats(res, model_names, "7_{}".format(time_of_day), weight_dirs)
+        print_stats(home, res, model_names,
+                    "7_{}".format(time_of_day), weight_dirs)
 
         time_of_day = "night"
         bdd_to_coco(bdd_src,
@@ -370,7 +374,8 @@ def run(home, gen_flags, split, subsets):
                          EvalMode.FINAL,
                          10,
                          weight_dirs=weight_dirs)
-        print_stats(res, model_names, "7_{}".format(time_of_day), weight_dirs)
+        print_stats(home, res, model_names,
+                    "7_{}".format(time_of_day), weight_dirs)
 
     # Generate Figure 4
     # Dataset: BDD100K Val

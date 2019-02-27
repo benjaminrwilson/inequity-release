@@ -143,7 +143,8 @@ def prepare_detections(img_id, detections, mode):
     return detections
 
 
-def print_stats(results,
+def print_stats(home,
+                results,
                 model_names,
                 table_num,
                 weight_dirs=["MS COCO"],
@@ -153,6 +154,8 @@ def print_stats(results,
 
     Parameters
     ----------
+        home : str
+            Home directory in terminal.
         img_id : int
             The correspond img_id for a set of detections.
         model_names : list of str
@@ -170,7 +173,8 @@ def print_stats(results,
     None
 
     """
-    with open("../tables/table_{}.txt".format(table_num), "w") as table_file:
+    table_dir = join(home, "inequity-release", "tables")
+    with open(join(table_dir, "table_{}.txt".format(table_num)), "w") as table_file:
         if num_stats < 1 or num_stats > 12:
             print("Invalid num_stats size!")
             exit(0)
