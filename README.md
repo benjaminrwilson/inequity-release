@@ -18,6 +18,12 @@ http://jamiemorgenstern.com/papers/pid.pdf
 - Install Docker: https://docs.docker.com/install/
 - Install NVIDIA Docker: https://github.com/NVIDIA/nvidia-docker
 
+- Clone the repository:
+
+```
+git clone https://github.com/benjaminrwilson/inequity-release.git
+```
+
 - Pull the docker image:
 
 ```
