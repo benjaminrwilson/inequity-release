@@ -2,7 +2,7 @@
 
 ### Paper
 
-http://jamiemorgenstern.com/papers/pid.pdf
+https://arxiv.org/pdf/1902.11097.pdf
 
 [Benjamin Wilson](https://github.com/benjaminrwilson), [Judy Hoffman](https://people.eecs.berkeley.edu/~jhoffman/), [Jamie Morgenstern](http://jamiemorgenstern.com)
 
