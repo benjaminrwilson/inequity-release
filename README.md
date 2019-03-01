@@ -46,6 +46,7 @@ bash ~/inequity-release/scripts/get_data.sh
 
 ### Evaluation
 
+- We use the COCO API for performance evaluation.
 - Run the evaluation (this will likely take over an hour).
 ```
 python ~/inequity-release/inequity/eval.py
