@@ -1,10 +1,17 @@
 # Predictive Inequity in Object Detection
 
-### Paper
+Created by [Benjamin Wilson](https://benjaminrwilson.com), [Judy Hoffman](https://www.cc.gatech.edu/~judy), [Jamie Morgenstern](http://jamiemorgenstern.com) at [Georgia Tech](https://cc.gatech.edu)
 
-https://arxiv.org/pdf/1902.11097.pdf
+Please consider citing our [paper](https://arxiv.org/abs/1902.11097) if it's helpful to your research:
 
-[Benjamin Wilson](https://github.com/benjaminrwilson), [Judy Hoffman](https://people.eecs.berkeley.edu/~jhoffman/), [Jamie Morgenstern](http://jamiemorgenstern.com)
+```
+@article{wilson2019predictive,
+  title={Predictive inequity in object detection},
+  author={Wilson, Benjamin and Hoffman, Judy and Morgenstern, Jamie},
+  journal={arXiv preprint arXiv:1902.11097},
+  year={2019}
+}
+```
 
 ## Prerequisites
 - Docker
